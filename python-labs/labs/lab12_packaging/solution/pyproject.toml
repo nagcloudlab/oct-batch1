@@ -1,0 +1,18 @@
+# Reference only (stretch task): makes payments_tools pip-installable.
+#   cd labs/lab12_packaging/solution && pip install -e .
+#   payments-summary ../../../data/payments.csv --account 4201
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "payments-tools"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+payments-summary = "payments_tools.cli:main"
+
+[tool.setuptools]
+packages = ["payments_tools"]
